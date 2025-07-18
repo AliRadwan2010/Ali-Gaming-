@@ -1,0 +1,409 @@
+<html class="scroll-smooth" lang="ar" dir="rtl">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   علي جيمينج - منصة تعبئة الألعاب
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+  </style>
+  <script>
+   // Language data for Arabic and English
+   const langData = {
+     ar: {
+       siteTitle: "علي جيمينج - منصة تعبئة الألعاب",
+       headerTitle: "علي جيمينج",
+       headerSubtitle: "منصة تعبئة الألعاب الموثوقة",
+       gamesListTitle: "قائمة الألعاب وخيارات التعبئة",
+       exclusiveOffersTitle: "العروض الحصرية",
+       offers: [
+         "🔥 اشحن واربح: اشترِ أي باقة واحصل على عناصر إضافية داخل اللعبة.",
+         "🎯 خصم المحترفين: 15% خصم على أول تعبئة.",
+         "💎 برنامج نقاط علي: اكسب نقاط ولاء مع كل عملية شراء لاستخدامها في خصومات مستقبلية."
+       ],
+       paymentTitle: "الدفع",
+       paymentInstruction: "يرجى تحويل المبلغ",
+       paymentNumber: "+201080265792",
+       timeRemaining: "الوقت المتبقي لإتمام الدفع:",
+       doneButton: "تم",
+       backToGames: "العودة إلى الألعاب",
+       backToPackages: "العودة إلى الباقات",
+       confirmLeaveMsg: "هل أنت متأكد؟",
+       alertDone: "تم تأكيد طلبك. يرجى الانتظار من 5 دقائق إلى 3 ساعات لتأكيد طلبك.",
+       currencyLabel: "العملة",
+       packagesLabel: "الباقات",
+       screenshotLabel: "ضع لقطة شاشة التحويل هنا",
+       gameIdLabel: "معرّف اللعبة الخاص بي (Hands)",
+       orderConfirmedMsg: "تم تأكيد طلبك. يرجى الانتظار من 5 دقائق إلى 3 ساعات لتأكيد طلبك.",
+       whatsappNumber: "+201080265792",
+       emailAddress: "ayradwan111@gmail.com",
+       games: {
+         pubg: {name: "ببجي موبايل", currency: "UC", prices: {60: 42.47, 300: 214.05, 600: 428.54, 1200: 1071.99}, gifts: {60: 0, 300: 25, 600: 50, 1200: 100}},
+         freefire: {name: "فري فاير", currency: "الماس", prices: {100: 15, 310: 45, 520: 75, 1060: 150}, gifts: {100: 0, 310: 20, 520: 40, 1060: 80}},
+         cod: {name: "كول أوف ديوتي", currency: "CP", prices: {80: 10, 400: 50, 800: 90, 1600: 170}, gifts: {80: 0, 400: 15, 800: 30, 1600: 60}},
+         fortnite: {name: "فورتنايت", currency: "V-Bucks", prices: {1000: 20, 2800: 50, 5000: 90}, gifts: {1000: 0, 2800: 70, 5000: 120}},
+         fifa: {
+           name: "فيفا موبايل",
+           currency: "نقاط FC",
+           prices: {
+             40: 21,
+             100: 53,
+             520: 262,
+             1070: 525,
+             2200: 1050,
+             5750: 2625,
+             12000: 0
+           },
+           gifts: {
+             40: 0,
+             100: 0,
+             520: 0,
+             1070: 0,
+             2200: 0,
+             5750: 0,
+             12000: 0
+           }
+         }
+       }
+     },
+     en: {
+       siteTitle: "Ali Gaming - Game Top-Up Platform",
+       headerTitle: "Ali Gaming",
+       headerSubtitle: "Your trusted gaming top-up platform",
+       gamesListTitle: "Game List & Top-Up Options",
+       exclusiveOffersTitle: "Exclusive Offers",
+       offers: [
+         "🔥 Top-up & Win: Buy any package and receive bonus in-game items.",
+         "🎯 Pro Gamer Discount: 15% off your first top-up.",
+         "💎 Ali Points Program: Earn loyalty points with each purchase to use on future discounts."
+       ],
+       paymentTitle: "Payment",
+       paymentInstruction: "Please transfer the amount",
+       paymentNumber: "+201080265792",
+       timeRemaining: "Time remaining to complete payment:",
+       doneButton: "Done",
+       backToGames: "Back to Games",
+       backToPackages: "Back to Packages",
+       confirmLeaveMsg: "Are you sure?",
+       alertDone: "Your order has been confirmed. Please wait from 5 minutes to 3 hours for your order to be confirmed.",
+       currencyLabel: "Currency",
+       packagesLabel: "Packages",
+       screenshotLabel: "Put a screenshot of the transfer here",
+       gameIdLabel: "My game ID (Hands)",
+       orderConfirmedMsg: "Your order has been confirmed. Please wait from 5 minutes to 3 hours for your order to be confirmed.",
+       whatsappNumber: "+201080265792",
+       emailAddress: "ayradwan111@gmail.com",
+       games: {
+         pubg: {name: "PUBG Mobile", currency: "UC", prices: {60: 42.47, 300: 214.05, 600: 428.54, 1200: 1071.99}, gifts: {60: 0, 300: 25, 600: 50, 1200: 100}},
+         freefire: {name: "Free Fire", currency: "Diamonds", prices: {100: 15, 310: 45, 520: 75, 1060: 150}, gifts: {100: 0, 310: 20, 520: 40, 1060: 80}},
+         cod: {name: "Call of Duty", currency: "CP", prices: {80: 10, 400: 50, 800: 90, 1600: 170}, gifts: {80: 0, 400: 15, 800: 30, 1600: 60}},
+         fortnite: {name: "Fortnite", currency: "V-Bucks", prices: {1000: 20, 2800: 50, 5000: 90}, gifts: {1000: 0, 2800: 70, 5000: 120}},
+         fifa: {
+           name: "FIFA Mobile",
+           currency: "FC Points",
+           prices: {
+             40: 21,
+             100: 53,
+             520: 262,
+             1070: 525,
+             2200: 1050,
+             5750: 2625,
+             12000: 0
+           },
+           gifts: {
+             40: 0,
+             100: 0,
+             520: 0,
+             1070: 0,
+             2200: 0,
+             5750: 0,
+             12000: 0
+           }
+         }
+       }
+     }
+   };
+
+   // Current language state
+   let currentLang = "ar";
+
+   // Simple countdown timer for 20 minutes
+   function startCountdown(duration, display) {
+     let timer = duration, minutes, seconds;
+     const interval = setInterval(() => {
+       minutes = parseInt(timer / 60, 10);
+       seconds = parseInt(timer % 60, 10);
+
+       minutes = minutes < 10 ? "0" + minutes : minutes;
+       seconds = seconds < 10 ? "0" + seconds : seconds;
+
+       display.textContent = minutes + ":" + seconds;
+
+       if (--timer < 0) {
+         clearInterval(interval);
+         display.textContent = currentLang === "ar" ? "انتهى الوقت" : "Time expired";
+         document.getElementById("doneBtn").disabled = true;
+         document.getElementById("doneBtn").classList.add("opacity-50", "cursor-not-allowed");
+       }
+     }, 1000);
+   }
+
+   // Show offers page for selected game
+   function showOffers(gameKey) {
+     const main = document.getElementById("mainContent");
+     const lang = langData[currentLang];
+     const games = {
+       pubg: {
+         name: lang.games.pubg.name,
+         currency: lang.games.pubg.currency,
+         packages: [60, 300, 600, 1200],
+         img: "https://storage.googleapis.com/a1aa/image/2d072adc-44b4-4080-1069-12e3a553f1cd.jpg",
+         gifts: lang.games.pubg.gifts
+       },
+       freefire: {
+         name: lang.games.freefire.name,
+         currency: lang.games.freefire.currency,
+         packages: [100, 310, 520, 1060],
+         img: "https://storage.googleapis.com/a1aa/image/40b757d8-c86b-4317-3393-e4e32f752124.jpg",
+         gifts: lang.games.freefire.gifts
+       },
+       cod: {
+         name: lang.games.cod.name,
+         currency: lang.games.cod.currency,
+         packages: [80, 400, 800, 1600],
+         img: "https://storage.googleapis.com/a1aa/image/c9aa953f-3212-43e4-ec5a-322000c04000.jpg",
+         gifts: lang.games.cod.gifts
+       },
+       fortnite: {
+         name: lang.games.fortnite.name,
+         currency: lang.games.fortnite.currency,
+         packages: [1000, 2800, 5000],
+         img: "https://storage.googleapis.com/a1aa/image/89b3a4c7-be0a-41fa-a320-fa477c32a54d.jpg",
+         gifts: lang.games.fortnite.gifts
+       },
+       fifa: {
+         name: lang.games.fifa.name,
+         currency: lang.games.fifa.currency,
+         packages: [40, 100, 520, 1070, 2200, 5750, 12000],
+         img: "https://storage.googleapis.com/a1aa/image/17ab160c-3ed9-4b44-1ac4-21f1286c9cf5.jpg",
+         gifts: lang.games.fifa.gifts
+       }
+     };
+
+     const game = games[gameKey];
+     if (!game) return;
+
+     main.innerHTML = `
+      <section class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6 space-y-6" tabindex="0">
+       <div class="flex ${currentLang === 'ar' ? 'flex-row-reverse' : 'flex-row'} items-center space-x-4 space-x-reverse-4">
+         <img src="${game.img}" alt="${game.name} game icon" class="w-20 h-20 rounded-lg object-cover"/>
+         <h2 class="text-3xl font-bold">${game.name} - ${lang.packagesLabel}</h2>
+       </div>
+       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+         ${game.packages.map(pkg => {
+           const price = langData[currentLang].games[gameKey].prices[pkg];
+           const gift = game.gifts[pkg];
+           const giftText = gift > 0 ? ` + ${gift}` : "";
+           const priceText = price > 0 ? `${price} EGP` : "";
+           return `<button onclick="goToPayment('${game.name}', '${game.currency}', ${pkg}, ${price}, ${gift})" class="border border-gray-300 rounded-xl py-3 px-4 text-center font-semibold text-blue-700 hover:bg-blue-100 transition whitespace-nowrap">
+             ${pkg} ${game.currency}${giftText}<br/><span class="text-sm font-normal">${priceText}</span>
+           </button>`;
+         }).join('')}
+       </div>
+       <button onclick="goBack()" class="mt-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-6 rounded-lg">
+         ${lang.backToGames}
+       </button>
+      </section>
+     `;
+   }
+
+   // Show payment page with countdown, screenshot upload, and game ID input
+   function goToPayment(gameName, currency, amountPackage, price, gift) {
+     const main = document.getElementById("mainContent");
+     const lang = langData[currentLang];
+     const giftText = gift > 0 ? ` + ${gift}` : "";
+     const priceText = price > 0 ? `${price} EGP` : (currentLang === "ar" ? "السعر غير متوفر" : "Price not available");
+     main.innerHTML = `
+      <section class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6 space-y-6 text-center" tabindex="0">
+       <h2 class="text-3xl font-bold mb-4">${gameName} - ${lang.paymentTitle}</h2>
+       <p class="text-lg mb-4">${lang.paymentInstruction} <span class="font-semibold">${priceText}</span> ${currentLang === "ar" ? "إلى الرقم:" : "to the number:"}</p>
+       <p class="text-xl font-mono bg-gray-100 p-3 rounded mb-6 select-all">${lang.paymentNumber}</p>
+       <p class="text-lg mb-2">${lang.screenshotLabel}:</p>
+       <input type="file" accept="image/*" id="screenshotInput" aria-label="${lang.screenshotLabel}" class="mx-auto block mb-6 border border-gray-300 rounded-md p-2 w-full max-w-xs"/>
+       <p class="text-lg mb-2">${lang.gameIdLabel}:</p>
+       <input type="text" id="gameIdInput" aria-label="${lang.gameIdLabel}" placeholder="${lang.gameIdLabel}" class="mx-auto block mb-6 border border-gray-300 rounded-md p-2 w-full max-w-xs text-center"/>
+       <p class="text-lg mb-4">${lang.timeRemaining}</p>
+       <p id="countdown" class="text-4xl font-bold text-green-600 mb-6">20:00</p>
+       <button id="doneBtn" onclick="confirmPayment('${gameName}', '${currency}', ${amountPackage}, ${price}, ${gift})" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg transition">
+         ${lang.doneButton}
+       </button>
+       <button onclick="confirmLeave()" class="mt-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-6 rounded-lg">
+         ${lang.backToPackages}
+       </button>
+      </section>
+     `;
+     const twentyMinutes = 60 * 20;
+     const countdownDisplay = document.getElementById("countdown");
+     startCountdown(twentyMinutes, countdownDisplay);
+   }
+
+   // Confirm payment with screenshot and game ID validation, send WhatsApp and email
+   function confirmPayment(gameName, currency, amountPackage, price, gift) {
+     const lang = langData[currentLang];
+     const screenshotInput = document.getElementById("screenshotInput");
+     const gameIdInput = document.getElementById("gameIdInput");
+     if (!screenshotInput.files || screenshotInput.files.length === 0) {
+       alert(currentLang === "ar" ? "يرجى رفع لقطة شاشة التحويل قبل الضغط على تم." : "Please upload a screenshot of the transfer before clicking Done.");
+       return;
+     }
+     if (!gameIdInput.value.trim()) {
+       alert(currentLang === "ar" ? "يرجى إدخال معرف اللعبة الخاص بك قبل الضغط على تم." : "Please enter your game ID before clicking Done.");
+       return;
+     }
+
+     alert(lang.alertDone);
+
+     // Prepare message for WhatsApp and email
+     const giftText = gift > 0 ? ` + ${gift}` : "";
+     const message = `
+${currentLang === "ar" ? "طلب جديد من علي جيمينج:" : "New order from Ali Gaming:"}
+${gameName} - ${amountPackage}${giftText} ${currency}
+${currentLang === "ar" ? "السعر:" : "Price:"} ${price > 0 ? price + " EGP" : (currentLang === "ar" ? "السعر غير متوفر" : "Price not available")}
+${currentLang === "ar" ? "معرف اللعبة:" : "Game ID:"} ${gameIdInput.value.trim()}
+${currentLang === "ar" ? "يرجى التحقق من الطلب والرد." : "Please verify the order and respond."}
+     `.trim();
+
+     // Send WhatsApp message by opening WhatsApp Web with prefilled message
+     const whatsappNumber = lang.whatsappNumber.replace(/\D/g, "");
+     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+     window.open(whatsappUrl, "_blank");
+
+     // Send email via mailto link
+     const email = lang.emailAddress;
+     const subject = currentLang === "ar" ? "طلب تعبئة لعبة جديد" : "New Game Top-Up Order";
+     const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+     window.open(mailtoUrl, "_blank");
+
+     // Return to main page after short delay to allow user to see alert
+     setTimeout(() => {
+       goBack();
+     }, 1500);
+   }
+
+   // Confirm leave from payment page with prompt
+   function confirmLeave() {
+     const lang = langData[currentLang];
+     if (confirm(lang.confirmLeaveMsg)) {
+       goBack();
+     }
+   }
+
+   // Go back to main games list
+   function goBack() {
+     const main = document.getElementById("mainContent");
+     main.innerHTML = gamesListHTML;
+   }
+
+   // Switch language and reload content
+   function switchLanguage(lang) {
+     currentLang = lang;
+     document.documentElement.lang = lang;
+     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+     document.title = langData[lang].siteTitle;
+     document.getElementById("headerTitle").textContent = langData[lang].headerTitle;
+     document.getElementById("headerSubtitle").textContent = langData[lang].headerSubtitle;
+     document.getElementById("langSelect").value = lang;
+     // Reload main content to reflect language
+     goBack();
+   }
+
+   // Initial games list HTML for easy reset
+   let gamesListHTML = "";
+
+   function buildGamesListHTML() {
+     const lang = langData[currentLang];
+     gamesListHTML = `
+      <section>
+       <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <i class="fas fa-gamepad text-green-600"></i>
+        ${lang.gamesListTitle}
+       </h2>
+       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-lg shadow-md p-5 flex flex-col items-center text-center cursor-pointer hover:shadow-lg transition" onclick="showOffers('pubg')" tabindex="0" role="button" aria-label="${lang.games.pubg.name} - ${lang.packagesLabel}">
+         <img alt="${lang.games.pubg.name} game icon" class="w-24 h-24 mb-4 rounded-lg object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2d072adc-44b4-4080-1069-12e3a553f1cd.jpg" width="100"/>
+         <h3 class="font-semibold text-lg mb-2">${lang.games.pubg.name}</h3>
+         <p class="text-sm text-gray-600 mb-3">${lang.currencyLabel}: <span class="font-semibold">${lang.games.pubg.currency}</span></p>
+        </article>
+        <article class="bg-white rounded-lg shadow-md p-5 flex flex-col items-center text-center cursor-pointer hover:shadow-lg transition" onclick="showOffers('freefire')" tabindex="0" role="button" aria-label="${lang.games.freefire.name} - ${lang.packagesLabel}">
+         <img alt="${lang.games.freefire.name} game icon" class="w-24 h-24 mb-4 rounded-lg object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/40b757d8-c86b-4317-3393-e4e32f752124.jpg" width="100"/>
+         <h3 class="font-semibold text-lg mb-2">${lang.games.freefire.name}</h3>
+         <p class="text-sm text-gray-600 mb-3">${lang.currencyLabel}: <span class="font-semibold">${lang.games.freefire.currency}</span></p>
+        </article>
+        <article class="bg-white rounded-lg shadow-md p-5 flex flex-col items-center text-center cursor-pointer hover:shadow-lg transition" onclick="showOffers('cod')" tabindex="0" role="button" aria-label="${lang.games.cod.name} - ${lang.packagesLabel}">
+         <img alt="${lang.games.cod.name} game icon" class="w-24 h-24 mb-4 rounded-lg object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c9aa953f-3212-43e4-ec5a-322000c04000.jpg" width="100"/>
+         <h3 class="font-semibold text-lg mb-2">${lang.games.cod.name}</h3>
+         <p class="text-sm text-gray-600 mb-3">${lang.currencyLabel}: <span class="font-semibold">${lang.games.cod.currency}</span></p>
+        </article>
+        <article class="bg-white rounded-lg shadow-md p-5 flex flex-col items-center text-center cursor-pointer hover:shadow-lg transition" onclick="showOffers('fortnite')" tabindex="0" role="button" aria-label="${lang.games.fortnite.name} - ${lang.packagesLabel}">
+         <img alt="${lang.games.fortnite.name} game icon" class="w-24 h-24 mb-4 rounded-lg object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/89b3a4c7-be0a-41fa-a320-fa477c32a54d.jpg" width="100"/>
+         <h3 class="font-semibold text-lg mb-2">${lang.games.fortnite.name}</h3>
+         <p class="text-sm text-gray-600 mb-3">${lang.currencyLabel}: <span class="font-semibold">${lang.games.fortnite.currency}</span></p>
+        </article>
+        <article class="bg-white rounded-lg shadow-md p-5 flex flex-col items-center text-center cursor-pointer hover:shadow-lg transition" onclick="showOffers('fifa')" tabindex="0" role="button" aria-label="${lang.games.fifa.name} - ${lang.packagesLabel}">
+         <img alt="${lang.games.fifa.name} game icon" class="w-24 h-24 mb-4 rounded-lg object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/17ab160c-3ed9-4b44-1ac4-21f1286c9cf5.jpg" width="100"/>
+         <h3 class="font-semibold text-lg mb-2">${lang.games.fifa.name}</h3>
+         <p class="text-sm text-gray-600 mb-3">${lang.currencyLabel}: <span class="font-semibold">${lang.games.fifa.currency}</span></p>
+        </article>
+       </div>
+      </section>
+      <section class="mt-12">
+       <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+        <i class="fas fa-gift text-pink-600"></i>
+        ${lang.exclusiveOffersTitle}
+       </h2>
+       <ul class="list-disc list-inside space-y-2 text-gray-700 max-w-3xl">
+        ${lang.offers.map(offer => `<li>${offer}</li>`).join('')}
+       </ul>
+      </section>
+     `;
+   }
+
+   // On load, build initial content and set language selector
+   window.onload = () => {
+     buildGamesListHTML();
+     document.getElementById("mainContent").innerHTML = gamesListHTML;
+     document.getElementById("langSelect").value = currentLang;
+   };
+  </script>
+ </head>
+ <body class="min-h-screen flex flex-col">
+  <header class="bg-blue-600 text-white p-5 text-center relative">
+   <h1 id="headerTitle" class="text-3xl font-semibold">
+    علي جيمينج
+   </h1>
+   <p id="headerSubtitle" class="mt-1 text-lg font-light italic">
+    منصة تعبئة الألعاب الموثوقة
+   </p>
+   <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3">
+    <select id="langSelect" aria-label="اختيار اللغة / Language selection" onchange="switchLanguage(this.value)" class="rounded-md border border-gray-300 text-gray-800 p-1">
+     <option value="ar" selected>العربية</option>
+     <option value="en">English</option>
+    </select>
+   </div>
+  </header>
+  <main id="mainContent" class="flex-grow max-w-5xl mx-auto p-6 space-y-10" tabindex="0">
+   <!-- Content loaded by JS -->
+  </main>
+  <footer class="bg-gray-100 text-center p-4 text-gray-600 text-sm">
+   © 2024 علي جيمينج. جميع الحقوق محفوظة.
+  </footer>
+ </body>
+</html>
